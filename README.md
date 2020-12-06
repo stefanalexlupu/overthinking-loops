@@ -47,11 +47,22 @@ and if the basket is large enough, you step into "stack overflow" territory.
 If you move the loop to a function, you can avoid the `break`ing all together
 and return from the function.
 
-### [array-prototype.js](array-prototype.js)
+### [foreach.js](foreach.js)
 
 You probably already thought about this
 
-> "what about Array.prototype.forEach()?"
+> "what about `Array.prototype.forEach()`?"
+
+Well, you can't break out of these, or at least not in a clean and intuitive
+way. Here's an extract from [the MDN entry on `forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach):
+
+> There is no way to stop or break a `forEach()` loop other than by throwing an
+> exception. If you need such behavior, the `forEach()` method is the wrong tool.
+
+This file is an example of achieving this, but it's not by any means acceptable
+and should **not** be used in production code - _in my oppinion, that is_.
+
+### [array-prototype.js](array-prototype.js)
 
 Well, you can't break out of these. But we could totally try and make an
 implementation of a `loop` on Array.prototype which we can controll by

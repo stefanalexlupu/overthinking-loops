@@ -3,7 +3,7 @@ const { basket } = require('./basket.js')
 
 const caterpillar = new Caterpillar()
 
-// Similar to the example 6-array-prototype.js, we can use an already defined
+// Similar to the example array-prototype.js, we can use an already defined
 // array prototype function to obtain the same result. It was not intended for
 // this and it will look like 💩 if you use it, especially if anybody will
 // review your code - but hey, it works 😎.
