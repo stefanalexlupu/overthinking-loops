@@ -1,5 +1,9 @@
-const Caterpillar = require('./caterpillar.js')
-const { basket } = require('./basket.js')
+const Caterpillar = require('../common/caterpillar.js')
+// The only thing that changes in this implementation is this import statement.
+// The Array.prototype methods can only be called on an array, so we create a
+// limited flow of fruits and map it into an array using the spread operator
+// since calling the generator function returns an iterator object.
+const basket = [...require('./basket.js').basket()]
 
 const caterpillar = new Caterpillar()
 

@@ -1,5 +1,5 @@
-const Caterpillar = require('./caterpillar.js')
-const { basket } = require('./basket.js')
+const Caterpillar = require('../common/caterpillar.js')
+const basket = require('./basket.js').basket()
 
 const caterpillar = new Caterpillar()
 

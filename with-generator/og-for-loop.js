@@ -1,18 +1,17 @@
-const Caterpillar = require('./caterpillar.js')
-const { basket } = require('./basket.js')
+const Caterpillar = require('../common/caterpillar.js')
+const basket = require('./basket.js').basket();
 
 const caterpillar = new Caterpillar()
-let i = -1
 
-while (++i < basket.length) {
+for (fruit of basket) {
   if (!caterpillar.isHungry) {
     // no need to go through the rest of them, we can exit the loop right here
     break
   }
 
-  if (basket[i] === '🍈') {
+  if (fruit === '🍈') {
     // 🐛 is picky and doesn't like melon, so we should skip this fruit
     continue
   }
-  caterpillar.eat(basket[i]);
+  caterpillar.eat(fruit);
 }
